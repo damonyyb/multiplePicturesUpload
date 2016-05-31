@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 mesada. All rights reserved.
 //
 
-#import "MSDImageUploader.h"
+#import "MSDImagesUploader.h"
 #import "AFNetworking.h"
 #import "MD5.h"
 #import "AFFileAPIClient.h"
@@ -15,7 +15,7 @@ static AFHTTPSessionManager* _afHTTPSessionManager;
 static NSString * const MD5_KEY = @"abcdefg";
 
 
-@implementation MSDImageUploader
+@implementation MSDImagesUploader
 //////bobo
 +(NSURLSessionDataTask *)post:(NSData*)imageData andOrderNum:(NSInteger )num type:(MSDImageUploaderType)type complete:(void (^)(NSString* urlString,NSError *error,NSInteger num))block
 {
@@ -116,7 +116,7 @@ static NSString * const MD5_KEY = @"abcdefg";
         //控制进dispatch_group_enter
         dispatch_group_enter(serviceGroup);
         
-        [MSDImageUploader post:array[i]  andOrderNum:i type:MSDNormalImageUploaderType  complete:^(NSString *urlString, NSError *error,NSInteger num) {
+        [MSDImagesUploader post:array[i]  andOrderNum:i type:MSDNormalImageUploaderType  complete:^(NSString *urlString, NSError *error,NSInteger num) {
             if (!error) {
                 NSLog(@"第%ld个成功==%@",(long)num,urlString);
                 
@@ -147,7 +147,7 @@ static NSString * const MD5_KEY = @"abcdefg";
     
 }
 +(void)postImgsThreesTimesFromGCD:(NSArray *)array type:(MSDImageUploaderType)type complete:(void (^)(NSArray * urlStringArr,BOOL failure,NSString *failureInfo))block{
-    [MSDImageUploader postFailureImgsFromGCD:array type:MSDNormalImageUploaderType complete:^(NSArray *urlStringArr, BOOL failure) {
+    [MSDImagesUploader postFailureImgsFromGCD:array type:MSDNormalImageUploaderType complete:^(NSArray *urlStringArr, BOOL failure) {
         if (!failure) {
             NSLog(@"success：第一次就全部上传成功");
             if (block ) {
@@ -155,7 +155,7 @@ static NSString * const MD5_KEY = @"abcdefg";
             }
         }else{
             
-            [MSDImageUploader postFailureImgsFromGCD:urlStringArr type:MSDNormalImageUploaderType complete:^(NSArray *urlStringSecondArr, BOOL failure) {
+            [MSDImagesUploader postFailureImgsFromGCD:urlStringArr type:MSDNormalImageUploaderType complete:^(NSArray *urlStringSecondArr, BOOL failure) {
                 
                 if (!failure) {
                     NSLog(@"success：第二次全部上传成功");
@@ -163,7 +163,7 @@ static NSString * const MD5_KEY = @"abcdefg";
                         block([urlStringArr copy],NO,nil);
                     }
                 }else{
-                    [MSDImageUploader postFailureImgsFromGCD:urlStringArr type:MSDNormalImageUploaderType complete:^(NSArray *urlStringThirdArr, BOOL failure) {
+                    [MSDImagesUploader postFailureImgsFromGCD:urlStringArr type:MSDNormalImageUploaderType complete:^(NSArray *urlStringThirdArr, BOOL failure) {
                         NSString *str = @"";
                         if (!failure) {
                             NSLog(@"success：第三次才上传成功");

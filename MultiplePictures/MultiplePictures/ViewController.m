@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MSDImageUploader.h"
+#import "MSDImagesUploader.h"
 
 @interface ViewController ()
 
@@ -27,7 +27,7 @@
      UIImage *image =[UIImage imageNamed:@"1"];
      NSData *imageData =UIImageJPEGRepresentation(image, 0.5);
     
-    [MSDImageUploader post:imageData  andOrderNum:0 type:MSDNormalImageUploaderType  complete:^(NSString *urlString, NSError *error,NSInteger num) {
+    [MSDImagesUploader post:imageData  andOrderNum:0 type:MSDNormalImageUploaderType  complete:^(NSString *urlString, NSError *error,NSInteger num) {
         if (!error) {
             NSLog(@"第%ld个==%@",(long)num,urlString);
         }
@@ -42,14 +42,14 @@
     UIImage *image2 = [UIImage imageNamed:@"2"];
      NSData *imageDate2 =UIImageJPEGRepresentation(image2, 0.5);
     
-    [MSDImageUploader postImgsFromAFN: @[imageDate2,imageData] type:MSDNormalImageUploaderType complete:^(NSString *urlString, NSError *error) {
+    [MSDImagesUploader postImgsFromAFN: @[imageDate2,imageData] type:MSDNormalImageUploaderType complete:^(NSString *urlString, NSError *error) {
         if (!error) {
             NSLog(@"%@",urlString);
         }
     }];
     
 }
-//测试54张图片多线程上传
+//测试54张图片多线程上传  
 - (void)threePicUploader{
     UIImage *image =[UIImage imageNamed:@"1"];
     NSData *imageData =UIImageJPEGRepresentation(image, 0.5);
@@ -68,7 +68,7 @@
                        imageData,imageDate2,imageDate3,imageDate3,imageDate2,imageData,
                        imageData,imageDate2,imageDate3,imageDate3,imageDate2,imageData];
     
-    [MSDImageUploader postImgsThreesTimesFromGCD:array type:MSDNormalImageUploaderType complete:^(NSArray *urlStringArr, BOOL failure,NSString *failureStr) {
+    [MSDImagesUploader postImgsThreesTimesFromGCD:array type:MSDNormalImageUploaderType complete:^(NSArray *urlStringArr, BOOL failure,NSString *failureStr) {
         if (!failure) {
             NSLog(@"%@",urlStringArr);
         }else{

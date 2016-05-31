@@ -8,7 +8,7 @@
 // 针对支援服务器
 
 #import "AFFileAPIClient.h"
-//#define FileServPrefix				@""     //OK
+#define FileServPrefix				@"http://fileservice.365car.com.cn:88/"     //OK
 
 @implementation AFFileAPIClient
 
@@ -16,9 +16,6 @@
     static AFFileAPIClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
-#warning  服务器写公司的文件服务器地址才能编译通过  //#define FileServPrefix				@""     //OK    取消注释
-        
         _sharedClient = [[AFFileAPIClient alloc] initWithBaseURL:[NSURL URLWithString:FileServPrefix]];
         _sharedClient.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
         _sharedClient.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:3];

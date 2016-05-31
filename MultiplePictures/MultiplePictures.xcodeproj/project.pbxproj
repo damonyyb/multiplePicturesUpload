@@ -24,7 +24,7 @@
 		1F80C9CA1CF3FDE000D1D57B /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80C9BF1CF3FDE000D1D57B /* AFURLRequestSerialization.m */; };
 		1F80C9CB1CF3FDE000D1D57B /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80C9C11CF3FDE000D1D57B /* AFURLResponseSerialization.m */; };
 		1F80C9CC1CF3FDE000D1D57B /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80C9C31CF3FDE000D1D57B /* AFURLSessionManager.m */; };
-		1F80C9CF1CF3FE7100D1D57B /* MSDImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80C9CE1CF3FE7100D1D57B /* MSDImageUploader.m */; };
+		1F80C9CF1CF3FE7100D1D57B /* MSDImagesUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80C9CE1CF3FE7100D1D57B /* MSDImagesUploader.m */; };
 		1F80C9D21CF3FEBD00D1D57B /* MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80C9D11CF3FEBD00D1D57B /* MD5.m */; };
 		1F80C9D51CF3FF5D00D1D57B /* AFFileAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80C9D41CF3FF5D00D1D57B /* AFFileAPIClient.m */; };
 /* End PBXBuildFile section */
@@ -82,8 +82,8 @@
 		1F80C9C11CF3FDE000D1D57B /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		1F80C9C21CF3FDE000D1D57B /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		1F80C9C31CF3FDE000D1D57B /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		1F80C9CD1CF3FE7100D1D57B /* MSDImageUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDImageUploader.h; sourceTree = "<group>"; };
-		1F80C9CE1CF3FE7100D1D57B /* MSDImageUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDImageUploader.m; sourceTree = "<group>"; };
+		1F80C9CD1CF3FE7100D1D57B /* MSDImagesUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDImagesUploader.h; sourceTree = "<group>"; };
+		1F80C9CE1CF3FE7100D1D57B /* MSDImagesUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDImagesUploader.m; sourceTree = "<group>"; };
 		1F80C9D01CF3FEBD00D1D57B /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5.h; sourceTree = "<group>"; };
 		1F80C9D11CF3FEBD00D1D57B /* MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5.m; sourceTree = "<group>"; };
 		1F80C9D31CF3FF5D00D1D57B /* AFFileAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFFileAPIClient.h; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 			children = (
 				1F80C9D01CF3FEBD00D1D57B /* MD5.h */,
 				1F80C9D11CF3FEBD00D1D57B /* MD5.m */,
-				1F80C9CD1CF3FE7100D1D57B /* MSDImageUploader.h */,
-				1F80C9CE1CF3FE7100D1D57B /* MSDImageUploader.m */,
+				1F80C9CD1CF3FE7100D1D57B /* MSDImagesUploader.h */,
+				1F80C9CE1CF3FE7100D1D57B /* MSDImagesUploader.m */,
 				1F80C9D31CF3FF5D00D1D57B /* AFFileAPIClient.h */,
 				1F80C9D41CF3FF5D00D1D57B /* AFFileAPIClient.m */,
 				1F270F5F1CF3FC40004BED51 /* AppDelegate.h */,
@@ -351,7 +351,7 @@
 				1F80C9C61CF3FDE000D1D57B /* AFHTTPSessionManager.m in Sources */,
 				1F80C9CA1CF3FDE000D1D57B /* AFURLRequestSerialization.m in Sources */,
 				1F80C9CC1CF3FDE000D1D57B /* AFURLSessionManager.m in Sources */,
-				1F80C9CF1CF3FE7100D1D57B /* MSDImageUploader.m in Sources */,
+				1F80C9CF1CF3FE7100D1D57B /* MSDImagesUploader.m in Sources */,
 				1F270F611CF3FC40004BED51 /* AppDelegate.m in Sources */,
 				1F270F5E1CF3FC40004BED51 /* main.m in Sources */,
 				1F80C9D51CF3FF5D00D1D57B /* AFFileAPIClient.m in Sources */,

@@ -15,7 +15,7 @@ typedef NS_ENUM(int, MSDImageUploaderType)
     MSDNormalImageUploaderType//普通图像
 };
 
-@interface MSDImageUploader : NSObject
+@interface MSDImagesUploader : NSObject
 /**
  *  单张图片上传
  *
